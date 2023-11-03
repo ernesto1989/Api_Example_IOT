@@ -109,7 +109,7 @@ function getLogByDateBetween(req,res){
   var conn = mysql.getConnection();
   conn.connect((error)=>{
       if (error) throw error;
-      var params = [id];
+      var params = [date_one,date_two];
       conn.execute(sql, params, (error, data, fields) => {
           if (error) {
             res.status(500);
